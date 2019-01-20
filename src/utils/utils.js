@@ -19,9 +19,10 @@ const generateRandomArr = ({length = 5, min = 0 , max = 1}) => {
   return arr
 }
 
-const consoleArr = (arr) => {
+const consoleArr = (arr, ...info) => {
   let str = ``
   arr.forEach(item => str += `${item}, `)
+  if (info) console.log(...info)
   console.log(str)
 }
 

@@ -7,7 +7,7 @@
 import {generateRandomArr, consoleArr} from "../../utils/utils"
 
 const selectionSort = (arr) => {
-  consoleArr(arr)
+  consoleArr(arr, 'origin')
   for (let i = 0; i < arr.length; i++) {
     let minIndex = i
     for (let j = i + 1; j < arr.length; j++) {
@@ -15,7 +15,7 @@ const selectionSort = (arr) => {
     }
     [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
   }
-  consoleArr(arr)
+  consoleArr(arr, 'sort')
   return arr
 }
 
