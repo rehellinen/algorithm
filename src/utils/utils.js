@@ -26,4 +26,11 @@ const consoleArr = (arr, ...info) => {
   console.log(str)
 }
 
-export {generateRandomArr, consoleArr}
+const performanceTesting = (func, ...params) => {
+  const start = new Date().getTime()
+  func(...params)
+  const end = new Date().getTime()
+  console.log(`${(end - start) / 1000}s used`)
+}
+
+export {generateRandomArr, consoleArr, performanceTesting}

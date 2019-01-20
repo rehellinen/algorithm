@@ -4,10 +4,10 @@
  *  Create By rehellinen
  *  Create On 2019/1/20 15:30
  */
-import {generateRandomArr, consoleArr} from "../../utils/utils"
+import {generateRandomArr, consoleArr, performanceTesting} from "../../utils/utils"
 
 const selectionSort = (arr) => {
-  consoleArr(arr, 'origin')
+  // consoleArr(arr, 'origin')
   for (let i = 0; i < arr.length; i++) {
     let minIndex = i
     for (let j = i + 1; j < arr.length; j++) {
@@ -15,12 +15,12 @@ const selectionSort = (arr) => {
     }
     [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
   }
-  consoleArr(arr, 'sort')
+  // consoleArr(arr, 'sort')
   return arr
 }
 
-const resArr = selectionSort(generateRandomArr({
-  length: 10,
+performanceTesting(selectionSort, generateRandomArr({
+  length: 100000,
   min: 0,
-  max: 15
+  max: 15000
 }))
