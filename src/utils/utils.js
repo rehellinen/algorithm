@@ -28,9 +28,23 @@ const consoleArr = (arr, ...info) => {
 
 const performanceTesting = (func, ...params) => {
   const start = new Date().getTime()
-  func(...params)
+  const arr = func(...params)
   const end = new Date().getTime()
-  console.log(`${(end - start) / 1000}s used`)
+
+  if (!isCorrectOrder(arr)) {
+    console.log(`${func.name}, order err!`)
+    return
+  }
+
+  console.log(`${func.name}, ${(end - start) / 1000}s used!`)
 }
 
-export {generateRandomArr, consoleArr, performanceTesting}
+const isCorrectOrder = (arr) => {
+  if (!arr || arr.length === 0) return false
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > arr[i + 1]) return false
+  }
+  return true
+}
+
+export {generateRandomArr, consoleArr, performanceTesting, isCorrectOrder}

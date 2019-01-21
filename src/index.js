@@ -10,7 +10,7 @@ class Run {
 
   start () {
     this.app.innerHTML="<p>test</p>"
-    require('./alogorithm/sort/selection')
+    require('./alogorithm/sort')
   }
 }
 
