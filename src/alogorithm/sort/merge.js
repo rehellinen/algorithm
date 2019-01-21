@@ -23,7 +23,7 @@ const __mergeSort = (arr, left, right) => {
   __merge(arr, left, mid, right)
 }
 
-const __merge = (arr, left, mid, right) => {
+export const __merge = (arr, left, mid, right) => {
   const temp = []
   for (let i = left; i <= right; i++) {
     temp.push(arr[i])

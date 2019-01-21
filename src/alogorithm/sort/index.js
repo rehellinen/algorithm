@@ -8,9 +8,11 @@ import {insertionSort} from "./insertion"
 import {selectionSort} from "./selection"
 import {bubbleSort} from "./bubble"
 import {mergeSort} from "./merge"
+import {mergeSortV2} from "./merge_v2"
 import {generateRandomArr, performanceTesting} from "../../utils/utils"
 
 performanceTesting(insertionSort, generateRandomArr({length: 30000, max: 15000}))
 performanceTesting(selectionSort, generateRandomArr({length: 30000, max: 15000}))
-// performanceTesting(bubbleSort, generateRandomArr({length: 10000, max: 15000}))
+performanceTesting(bubbleSort, generateRandomArr({length: 30000, max: 15000}))
 performanceTesting(mergeSort, generateRandomArr({length: 30000, max: 15000}))
+performanceTesting(mergeSortV2, generateRandomArr({length: 30000, max: 15000}))
