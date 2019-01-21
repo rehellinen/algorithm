@@ -6,7 +6,9 @@
 
 import {insertionSort} from "./insertion"
 import {selectionSort} from "./selection"
+import {bubbleSort} from "./bubble"
 import {generateRandomArr, performanceTesting} from "../../utils/utils"
 
-performanceTesting(insertionSort, generateRandomArr({length: 10000, max: 4}))
-performanceTesting(selectionSort, generateRandomArr({length: 10000, max: 4}))
+performanceTesting(insertionSort, generateRandomArr({length: 10000, max: 15000}))
+performanceTesting(selectionSort, generateRandomArr({length: 10000, max: 15000}))
+performanceTesting(bubbleSort, generateRandomArr({length: 10000, max: 15000}))
