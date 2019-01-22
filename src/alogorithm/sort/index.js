@@ -11,6 +11,7 @@ import {mergeSort} from "./merge"
 import {mergeSortV2} from "./merge_v2"
 import {quickSort} from "./quick"
 import {quickSortV2} from "./quick_v2"
+import {quickSortV3} from "./quick_v3"
 import {generateRandomArr, performanceTesting} from "../../utils/utils"
 
 performanceTesting(insertionSort, generateRandomArr({length: 30000, max: 15000}))
@@ -20,3 +21,4 @@ performanceTesting(mergeSort, generateRandomArr({length: 1000000, max: 15000}))
 performanceTesting(mergeSortV2, generateRandomArr({length: 1000000, max: 15000}))
 performanceTesting(quickSort, generateRandomArr({length: 1000000, max: 15000}))
 performanceTesting(quickSortV2, generateRandomArr({length: 1000000, max: 15000}))
+performanceTesting(quickSortV3, generateRandomArr({length: 1000000, max: 15000}))
