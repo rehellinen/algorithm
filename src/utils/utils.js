@@ -47,8 +47,8 @@ const isCorrectOrder = (arr) => {
   return true
 }
 
-const swap = (one, two) => {
-  [one, two] = [two, one]
+const swapArr = (arr, i, j) => {
+  [arr[i], arr[j]] = [arr[j], arr[i]]
 }
 
-export {generateRandomArr, consoleArr, performanceTesting, isCorrectOrder, swap}
+export {generateRandomArr, consoleArr, performanceTesting, isCorrectOrder, swapArr}
