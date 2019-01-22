@@ -20,10 +20,10 @@ const __quickSort = (arr, left, right) => {
 // 返回index
 const __partition = (arr, left, right) => {
   let rIndex = left
-  const refer = arr[rIndex]
-
   let random = Math.floor(Math.random() * (right - left + 1) + left);
   [arr[rIndex], arr[left]] = [arr[left], arr[rIndex]]
+  const refer = arr[rIndex]
+
   for (let i = left + 1; i <= right; i++) {
     if (arr[i] < refer) {
       [arr[rIndex + 1], arr[i]] = [arr[i], arr[rIndex + 1]]
