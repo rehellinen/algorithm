@@ -14,7 +14,7 @@ import {generateRandomArr, performanceTesting} from "../../utils/utils"
 
 performanceTesting(insertionSort, generateRandomArr({length: 30000, max: 15000}))
 performanceTesting(selectionSort, generateRandomArr({length: 30000, max: 15000}))
-performanceTesting(bubbleSort, generateRandomArr({length: 30000, max: 15000}))
-performanceTesting(mergeSort, generateRandomArr({length: 30000, max: 15000}))
-performanceTesting(mergeSortV2, generateRandomArr({length: 30000, max: 15000}))
-performanceTesting(quickSort, generateRandomArr({length: 30000, max: 15000}))
+// performanceTesting(bubbleSort, generateRandomArr({length: 30000, max: 15000}))
+performanceTesting(mergeSort, generateRandomArr({length: 1000000, max: 15000}))
+performanceTesting(mergeSortV2, generateRandomArr({length: 1000000, max: 15000}))
+performanceTesting(quickSort, generateRandomArr({length: 1000000, max: 15000}))
