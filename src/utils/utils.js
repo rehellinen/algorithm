@@ -9,12 +9,25 @@
  * @param min 最小值
  * @param max 最大值
  */
-const generateRandomArr = ({length = 5, min = 0 , max = 1}) => {
+const generateRandomArr = ({length = 10000, min = 0 , max = 1}) => {
   if (min > max) return
   const arr = []
   for (let i = 0; i < length; i++) {
     const random = min + Math.random() * (max - min + 1)
     arr.push(Math.floor(random))
+  }
+  return arr
+}
+
+const generateNearlyOrderedArr = ({length = 10000, swapTimes = 5}) => {
+  const arr = []
+  for (let i = 0; i < length; i++) {
+    arr.push(i)
+  }
+  for (let i = 0; i < swapTimes; i++) {
+    let random1 = Math.floor(Math.random() * length)
+    let random2 = Math.floor(Math.random() * length)
+    swapArr(arr, random1, random2)
   }
   return arr
 }
@@ -51,4 +64,4 @@ const swapArr = (arr, i, j) => {
   [arr[i], arr[j]] = [arr[j], arr[i]]
 }
 
-export {generateRandomArr, consoleArr, performanceTesting, isCorrectOrder, swapArr}
+export {generateRandomArr, consoleArr, performanceTesting, isCorrectOrder, swapArr, generateNearlyOrderedArr}

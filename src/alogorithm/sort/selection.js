@@ -1,8 +1,11 @@
 /**
- *  选择排序
  *  selection.js
  *  Create By rehellinen
  *  Create On 2019/1/20 15:30
+ */
+
+/**
+ * 选择排序（O(n2)）
  */
 
 const selectionSort = (arr) => {

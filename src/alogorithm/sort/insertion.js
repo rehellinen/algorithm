@@ -1,8 +1,12 @@
 /**
- *  插入排序
  *  insertion.js
  *  Create By rehellinen
  *  Create On 2019/1/20 20:07
+ */
+
+/**
+ * 插入排序（O(n2)）
+ * 在数组近乎有序时性能很高
  */
 
 const insertionSort = (arr, left, right) => {
