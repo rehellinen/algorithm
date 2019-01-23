@@ -35,7 +35,7 @@ const test = (func, length, testTimes = 10) => {
   console.log('')
 }
 
-test(selectionSort, 10000)
+// test(selectionSort, 10000)
 test(selectionSortV2, 10000)
 // test(insertionSort, 10000)
 // test(bubbleSort, 10000)
