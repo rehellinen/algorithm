@@ -1,8 +1,11 @@
 /**
- * 冒泡排序
  *  bubble.js
  *  Create By rehellinen
  *  Create On 2019/1/21 13:12
+ */
+
+/**
+ * 冒泡排序
  */
 
 export const bubbleSort = (arr) => {

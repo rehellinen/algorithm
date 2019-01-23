@@ -48,8 +48,7 @@ const performanceTesting = (func, ...params) => {
     console.log(`${func.name}, order err!`)
     return
   }
-
-  console.log(`${func.name}, ${(end - start) / 1000}s used!`)
+  return end - start
 }
 
 const isCorrectOrder = (arr) => {

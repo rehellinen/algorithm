@@ -14,21 +14,29 @@ import {quickSortV2} from "./quick_v2"
 import {quickSortV3} from "./quick_v3"
 import {generateNearlyOrderedArr, generateRandomArr, performanceTesting} from "../../utils/utils"
 
-const test = (func, length) => {
-  console.log(chalk.cyan('random:'))
-  performanceTesting(func, generateRandomArr({length, max: 15000}))
-  console.log(chalk.cyan('nearly order:'))
-  performanceTesting(func, generateNearlyOrderedArr({length, swapTimes: 100}))
+const test = (func, length, testTimes = 10) => {
+  let random = 0
+  let ordered = 0
+  for (let i = 0; i < testTimes; i++) {
+    const randomTime = performanceTesting(func, generateRandomArr({length, max: 15000}))
+    const orderedTime = performanceTesting(func, generateNearlyOrderedArr({length, swapTimes: 100}))
+
+    random += randomTime
+    ordered += orderedTime
+  }
+  console.log(chalk.blue(`function name: ${func.name}`))
+  console.log(chalk.cyan(`random: ${random / testTimes}ms used!`))
+  console.log(chalk.cyan(`nearly ordered: ${ordered / testTimes}ms used!`))
   console.log('')
 }
 
 // test(selectionSort, 10000)
 // test(insertionSort, 10000)
 // test(bubbleSort, 10000)
-test(mergeSort, 100000)
-test(mergeSortV2, 100000)
-test(quickSort, 100000)
-test(quickSortV2, 100000)
-test(quickSortV3, 100000)
+test(mergeSort, 10000)
+test(mergeSortV2, 10000)
+test(quickSort, 10000)
+test(quickSortV2, 10000)
+test(quickSortV3, 10000)
 
 

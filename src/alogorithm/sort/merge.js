@@ -1,9 +1,13 @@
 /**
- *  归并排序
  *  merge.js
  *  Create By rehellinen
  *  Create On 2019/1/21 16:47
  */
+
+/**
+ * 归并排序
+ */
+
 import {insertionSort} from "./insertion"
 
 export const mergeSort = (arr) => {
