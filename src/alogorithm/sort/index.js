@@ -13,6 +13,7 @@ import {quickSort} from "./quick"
 import {quickSortV2} from "./quick_v2"
 import {quickSortV3} from "./quick_v3"
 import {generateNearlyOrderedArr, generateRandomArr, performanceTesting} from "../../utils/utils"
+import {selectionSortV2} from "./selection_v2"
 
 const test = (func, length, testTimes = 10) => {
   let random = 0
@@ -34,13 +35,14 @@ const test = (func, length, testTimes = 10) => {
   console.log('')
 }
 
-// test(selectionSort, 10000)
+test(selectionSort, 10000)
+test(selectionSortV2, 10000)
 // test(insertionSort, 10000)
 // test(bubbleSort, 10000)
-test(mergeSort, 10000)
-test(mergeSortV2, 10000)
-test(quickSort, 10000)
-test(quickSortV2, 10000)
-test(quickSortV3, 10000)
+// test(mergeSort, 10000)
+// test(mergeSortV2, 10000)
+// test(quickSort, 10000)
+// test(quickSortV2, 10000)
+// test(quickSortV3, 10000)
 
 
