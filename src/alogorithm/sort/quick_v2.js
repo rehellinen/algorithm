@@ -4,6 +4,7 @@
  *  Create On 2019/1/22 13:58
  */
 import {consoleArr, swapArr} from "../../utils/utils"
+import {insertionSort} from "./insertion"
 
 export const quickSortV2 = (arr) => {
   __quickSort(arr, 0, arr.length - 1)
@@ -11,7 +12,10 @@ export const quickSortV2 = (arr) => {
 }
 
 const __quickSort = (arr, left, right) => {
-  if (left >= right) return
+  if (right - left <= 15) {
+    insertionSort(arr, left, right)
+    return
+  }
 
   let p = __partition(arr, left, right)
   __quickSort(arr, left, p - 1)

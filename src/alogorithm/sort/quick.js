@@ -1,3 +1,5 @@
+import {insertionSort} from "./insertion"
+
 /**
  *  quick.js
  *  Create By rehellinen
@@ -10,7 +12,10 @@ export const quickSort = (arr) => {
 }
 
 const __quickSort = (arr, left, right) => {
-  if (left >= right) return
+  if (right - left <= 15) {
+    insertionSort(arr, left, right)
+    return
+  }
 
   let p = __partition(arr, left, right)
   __quickSort(arr, left, p - 1)
