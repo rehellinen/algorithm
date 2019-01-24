@@ -39,14 +39,14 @@ const test = (func, length, testTimes = 10) => {
 
 // test(selectionSort, 10000)
 // test(selectionSortV2, 10000)
-test(insertionSort, 10000)
-test(insertionSortV2, 10000)
+// test(insertionSort, 10000)
+// test(insertionSortV2, 10000)
 // test(bubbleSort, 100000)
 // test(mergeSort, 10000)
 // test(mergeSortV2, 10000)
-// test(quickSort, 20000)
-// test(quickSortV2, 20000)
-// test(quickSortV3, 20000)
-// test(shellSort, 10000)
+test(quickSort, 20000)
+test(quickSortV2, 20000)
+test(quickSortV3, 20000)
+test(shellSort, 20000)
 
 

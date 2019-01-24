@@ -14,7 +14,7 @@ export const insertionSortV2 = (arr, left = 0, right = arr.length - 1) => {
     }
 
     for(let j = i - 1; j >= low; j--){
-      arr[j+1] = arr[j];          // 记录后移
+      arr[j+1] = arr[j];
     }
     arr[low] = temp
   }
