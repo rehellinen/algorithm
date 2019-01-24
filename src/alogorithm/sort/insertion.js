@@ -31,6 +31,7 @@ const insertionSortV2 = (arr, left, right) => {
     right = arr.length - 1
   }
   for (let i = left + 1; i <= right; i++) {
+    if(arr[i] >= arr[i-1]) continue
     let temp = arr[i]
 
     let low = left
@@ -46,8 +47,11 @@ const insertionSortV2 = (arr, left, right) => {
         low = mid + 1
       }
     }
-    arr.splice(i, 1)
-    arr.splice(low, 0, temp)
+
+    for(let j = i - 1; j >= low; j--){
+      arr[j+1] = arr[j];          // 记录后移
+    }
+    arr[low] = temp
   }
   return arr
 }
