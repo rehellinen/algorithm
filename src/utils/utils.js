@@ -45,8 +45,7 @@ const performanceTesting = (func, ...params) => {
   const end = new Date().getTime()
 
   if (!isCorrectOrder(arr)) {
-    console.log(`${func.name}, order err!`)
-    return
+    return 'err'
   }
   return end - start
 }

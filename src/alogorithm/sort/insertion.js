@@ -25,4 +25,31 @@ const insertionSort = (arr, left, right) => {
   return arr
 }
 
-export {insertionSort}
+const insertionSortV2 = (arr, left, right) => {
+  if (!left && !right) {
+    left = 0
+    right = arr.length - 1
+  }
+  for (let i = left + 1; i <= right; i++) {
+    let temp = arr[i]
+
+    let low = left
+    let high = i - 1
+    while (low <= high) {
+      const mid = Math.floor((high + low) / 2)
+      if (temp < arr[mid]) {
+        high = mid - 1
+      } else if (temp === arr[mid]) {
+        low = mid
+        break
+      } else {
+        low = mid + 1
+      }
+    }
+    arr.splice(i, 1)
+    arr.splice(low, 0, temp)
+  }
+  return arr
+}
+
+export {insertionSort, insertionSortV2}

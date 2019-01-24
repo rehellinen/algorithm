@@ -4,7 +4,7 @@
  *  Create On 2019/1/21 9:52
  */
 import chalk from 'chalk'
-import {insertionSort} from "./insertion"
+import {insertionSort, insertionSortV2} from "./insertion"
 import {selectionSort} from "./selection"
 import {bubbleSort} from "./bubble"
 import {mergeSort} from "./merge"
@@ -29,20 +29,21 @@ const test = (func, length, testTimes = 10) => {
     limited += limitedTime
   }
   console.log(chalk.blue(`function name: ${func.name}`))
-  console.log(chalk.cyan(`random: ${random / testTimes}ms used!`))
-  console.log(chalk.cyan(`limited range: ${limited / testTimes}ms used!`))
-  console.log(chalk.cyan(`nearly ordered: ${ordered / testTimes}ms used!`))
+  console.log(chalk.cyan(`random: ${isNaN(random) ? 'order error!' :random/testTimes + 'ms used!'}`))
+  console.log(chalk.cyan(`limited range: ${isNaN(limited) ? 'order error!' :limited/testTimes + 'ms used!'}`))
+  console.log(chalk.cyan(`nearly ordered: ${isNaN(ordered) ? 'order error!' :ordered/testTimes + 'ms used!'}`))
   console.log('')
 }
 
 // test(selectionSort, 10000)
 // test(selectionSortV2, 10000)
-// test(insertionSort, 10000)
+test(insertionSort, 10000)
+test(insertionSortV2, 10000)
 // test(bubbleSort, 100000)
 // test(mergeSort, 10000)
 // test(mergeSortV2, 10000)
-test(quickSort, 20000)
-test(quickSortV2, 20000)
-test(quickSortV3, 20000)
+// test(quickSort, 20000)
+// test(quickSortV2, 20000)
+// test(quickSortV3, 20000)
 
 
