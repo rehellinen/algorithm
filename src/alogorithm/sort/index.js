@@ -4,7 +4,8 @@
  *  Create On 2019/1/21 9:52
  */
 import chalk from 'chalk'
-import {insertionSort, insertionSortV2} from "./insertion"
+import {insertionSort} from "./insertion"
+import {insertionSortV2} from "./insertion_v2"
 import {selectionSort} from "./selection"
 import {bubbleSort} from "./bubble"
 import {mergeSort} from "./merge"
@@ -14,6 +15,7 @@ import {quickSortV2} from "./quick_v2"
 import {quickSortV3} from "./quick_v3"
 import {generateNearlyOrderedArr, generateRandomArr, performanceTesting} from "../../utils/utils"
 import {selectionSortV2} from "./selection_v2"
+import {shellSort} from "./shell"
 
 const test = (func, length, testTimes = 10) => {
   let random = 0
@@ -45,5 +47,6 @@ test(insertionSortV2, 10000)
 // test(quickSort, 20000)
 // test(quickSortV2, 20000)
 // test(quickSortV3, 20000)
+// test(shellSort, 10000)
 
 
