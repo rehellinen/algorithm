@@ -17,7 +17,7 @@ import {generateNearlyOrderedArr, generateRandomArr, performanceTesting} from ".
 import {selectionSortV2} from "./selection_v2"
 import {shellSort} from "./shell"
 
-const test = (func, length, testTimes = 10) => {
+const test = (func, length, testTimes = 100) => {
   let random = 0
   let limited = 0
   let ordered = 0
@@ -41,13 +41,13 @@ const test = (func, length, testTimes = 10) => {
 // test(selectionSortV2, 10000)
 // test(insertionSort, 10000)
 // test(insertionSortV2, 10000)
-test(bubbleSort, 10000)
-test(bubbleSortV2, 10000)
-// test(mergeSort, 10000)
-// test(mergeSortV2, 10000)
-// test(quickSort, 20000)
-// test(quickSortV2, 20000)
-// test(quickSortV3, 20000)
-// test(shellSort, 20000)
+// test(bubbleSort, 10000)
+// test(bubbleSortV2, 10000)
+test(mergeSort, 100000)
+test(mergeSortV2, 100000)
+// test(quickSort, 10000)
+// test(quickSortV2, 10000)
+// test(quickSortV3, 10000)
+// test(shellSort, 10000)
 
 
