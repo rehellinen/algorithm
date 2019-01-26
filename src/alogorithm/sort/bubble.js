@@ -6,9 +6,10 @@
 
 import {swapArr} from "../../utils/utils"
 
-/**
- * 冒泡排序
- */
+// 总结：冒泡排序因为需要频繁交换数组中的元素，所以速度较慢。
+// 方法2、方法3相对于方法1而言，在数组有序性较强的情况下能显著提升速度。
+// 方法2与方法3速度差不多。
+
 
 // 无优化的冒泡排序
 export const bubbleSort= (arr) => {
@@ -42,7 +43,7 @@ export const bubbleSortV2 = (arr) => {
 }
 
 // 使用newN进行优化
-// 记录上一次循环中最后进行交换的位置newN，之后循环不考虑newN后的元素
+// 记录上一次循环中最后进行交换的位置（newN），之后循环不考虑newN后的元素
 export const bubbleSortV3 = (arr) => {
   let newN
   let n = arr.length
