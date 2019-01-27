@@ -50,10 +50,14 @@ const performanceTesting = (func, ...params) => {
   return end - start
 }
 
+const isNumber = (val) => {
+  return typeof val === 'number' && !isNaN(val)
+}
+
 const isCorrectOrder = (arr) => {
   if (!arr || arr.length === 0) return false
   for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] > arr[i + 1]) return false
+    if (arr[i] > arr[i + 1] || !isNumber(arr[i])) return false
   }
   return true
 }

@@ -27,7 +27,7 @@ const insertionSortV2 = (arr, left = 0, right = arr.length - 1) => {
   for (let i = left + 1; i < right + 1; i++) {
     let j
     let temp = arr[i]
-    for (j = i; j > 0 && temp < arr[j - 1]; j--) {
+    for (j = i; j > left && temp < arr[j - 1]; j--) {
       arr[j] = arr[j - 1]
     }
     arr[j] = temp
