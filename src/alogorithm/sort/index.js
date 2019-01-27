@@ -4,8 +4,7 @@
  *  Create On 2019/1/21 9:52
  */
 import chalk from 'chalk'
-import {insertionSort} from "./insertion"
-import {insertionSortV2} from "./insertion_v2"
+import {insertionSort, insertionSortV2, insertionSortV3} from "./insertion"
 import {selectionSort} from "./selection"
 import {bubbleSort, bubbleSortV2} from "./bubble"
 import {mergeSort} from "./merge"
@@ -41,6 +40,7 @@ const test = (func, length, testTimes = 100) => {
 // test(selectionSortV2, 10000)
 // test(insertionSort, 10000)
 // test(insertionSortV2, 10000)
+// test(insertionSortV3, 10000)
 // test(bubbleSort, 10000)
 // test(bubbleSortV2, 10000)
 test(mergeSort, 100000)
