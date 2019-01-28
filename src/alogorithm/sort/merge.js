@@ -5,15 +5,33 @@
  */
 
 // 归并排序，时间复杂度为O(nlogn)
-// 下面的算法进行了两处优化：
+// 下面的算法都进行了两处优化：
 // 1. 当递归至元素个数小于等于16的时候，使用插入排序进行优化。
 // 2. 因为左半部分、右半部分各自的顺序是对的，
 //    所以当右半部分的第一个元素大于左半部分的最后一个元素时，不用进行归并。
+// 按常理，算法1应比算法2的慢一些，因为其用到了递归。但是实际测试算法1却快一点。
 
 import {insertionSortV2} from "./insertion"
 
 export const mergeSort = (arr) => {
   __mergeSort(arr, 0, arr.length - 1)
+  return arr
+}
+
+export const mergeSortV2 = (arr) => {
+  const len = arr.length
+
+  for (let i = 0; i < len; i += 16) {
+    insertionSortV2(arr, i, Math.min(i + 15, len - 1))
+  }
+
+  for (let size = 16; size <= len; size *= 2) {
+    for (let i = 0; i + size < len; i += 2 * size) {
+      if (arr[i + size - 1] > arr[i + size])
+        __merge(arr, i, i + size - 1,
+          Math.min(len - 1, i + 2 * size - 1))
+    }
+  }
   return arr
 }
 
