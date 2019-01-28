@@ -66,4 +66,8 @@ const swapArr = (arr, i, j) => {
   [arr[i], arr[j]] = [arr[j], arr[i]]
 }
 
-export {generateRandomArr, consoleArr, performanceTesting, isCorrectOrder, swapArr, generateNearlyOrderedArr}
+const copyArr = (arr) => {
+  return JSON.parse(JSON.stringify(arr))
+}
+
+export {generateRandomArr, consoleArr, performanceTesting, isCorrectOrder, swapArr, generateNearlyOrderedArr, copyArr}
