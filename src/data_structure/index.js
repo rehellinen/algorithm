@@ -1,9 +1,14 @@
-import {Stack} from "./stack/Stack"
+import {Stack} from "./line/stack/Stack"
+import {ArrayQueue} from "./line/queue/ArrayQueue"
 
-let stack = new Stack()
-stack.push(1)
+let q = new Queue()
+console.log(q.isEmpty())
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+console.log(q.getSize())
+q.toString()
 
-stack.push(2)
-stack.push(2)
-
-stack.toString()
+q.dequeue()
+console.log(q.getFront())
+q.toString()

@@ -2,8 +2,6 @@
  * 栈(stack)
  * 后进先出（LIFO）
  */
-
-
 export class Stack {
   _data = []
   _top = 0
