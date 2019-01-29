@@ -17,7 +17,7 @@ export class ArrayQueue {
   }
 
   dequeue () {
-    if (this._data.length === 0) return null
+    if (this._data.length === 0) return 'empty'
     return this._data.splice(0, 1)[0]
   }
 
