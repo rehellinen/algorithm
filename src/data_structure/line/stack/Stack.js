@@ -23,13 +23,13 @@ export class Stack {
 
   // 取出栈顶元素
   pop () {
-    if (this._top < 0) return null
+    if (this._top <= 0) return 'empty'
     return this._data.splice(--this._top, 1)[0]
   }
 
   // 查看栈顶元素
   peek () {
-    if (this._top < 0) return null
+    if (this._top <= 0) return 'empty'
     return this._data[this._top - 1]
   }
 
