@@ -15,9 +15,10 @@ import {shellSort} from "./shell"
 import {generateNearlyOrderedArr, generateRandomArr, performanceTesting} from "../../utils/utils"
 import {test} from "../../utils/sort"
 
-test(10000, 10,
-  insertionSort, insertionSortV2, insertionSortV3,
-  mergeSort, mergeSortV2
+test(1000, 10,
+  // insertionSort, insertionSortV2, insertionSortV3,
+  // mergeSort, mergeSortV2
+  quickSort
 )
 
 

@@ -1,10 +1,9 @@
-import {insertionSort} from "./insertion"
-
 /**
  *  quick.js
  *  Create By rehellinen
  *  Create On 2019/1/21 22:43
  */
+import {insertionSort} from "./insertion"
 
 export const quickSort = (arr) => {
   __quickSort(arr, 0, arr.length - 1)
