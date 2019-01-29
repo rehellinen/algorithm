@@ -3,6 +3,13 @@
  *  Create By rehellinen
  *  Create On 2018/11/28 10:24
  */
-// require('./alogorithm/sort')
-// require('./test')
-require('./data_structure/index')
+const path = {
+  sort: './algorithm/sort',
+  test: './test',
+  dataStructure: './data_structure/index',
+  leetcode: './algorithm/leetcode'
+}
+
+const run = path.leetcode
+
+require(run)
