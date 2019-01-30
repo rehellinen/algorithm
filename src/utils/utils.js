@@ -44,7 +44,7 @@ const performanceTesting = (func, ...params) => {
   const arr = func(...params)
   const end = new Date().getTime()
 
-  if (!isCorrectOrder(arr)) {
+  if (Array.isArray(params[0]) && !isCorrectOrder(arr)) {
     return 'err'
   }
   return end - start

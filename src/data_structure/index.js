@@ -1,15 +1,25 @@
 import {Stack} from "./line/stack/Stack"
 import {ArrayQueue} from "./line/queue/ArrayQueue"
 import {CircularQueue} from "./line/queue/CircularQueue"
+import {performanceTesting} from "../utils/utils"
 
-let queue = new CircularQueue()
+// 测试循环队列与普通队列的性能
+const testQueue = (times = 100) => {
+  const count = 100000
+  let arrTime = 0
+  let cirTime = 0
+  const array = new ArrayQueue()
+  const cir = new CircularQueue()
+  const test = (queue) => {
+    for (let i = 0; i < count; i++)  queue.enqueue(i)
+    for (let i = 0; i < count; i++)  queue.dequeue()
+  }
 
-
-for (let i = 0; i < 40; i++) {
-  queue.enqueue(i)
+  arrTime += performanceTesting(test, array)
+  cirTime += performanceTesting(test, cir)
+  console.log(`array queue: ${arrTime}ms`)
+  console.log(`circular queue: ${cirTime}ms`)
 }
 
-for (let i = 0; i < 40; i++) {
-  queue.dequeue(i)
-  if (i % 5 === 0 || i > 30) queue.toString()
-}
+
+testQueue()
