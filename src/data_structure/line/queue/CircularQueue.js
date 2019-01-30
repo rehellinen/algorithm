@@ -5,6 +5,7 @@ export class CircularQueue {
   size = 0
 
   constructor (capacity = 10) {
+    // 循环队列需要浪费一个空间，因此要+1
     this._data = new Array(capacity + 1)
   }
 
@@ -37,6 +38,7 @@ export class CircularQueue {
     this.front = (this.front + 1) % this._data.length
     this.size--
 
+    // 当元素减少到容量的1/4时，将容量缩小为原来的1/2（设置最小容量为10）
     if (this.size === Math.floor(this.getCapacity() / 4 )
       && Math.floor(this.getCapacity() / 2) >= 10) {
       this.resize(Math.floor(this.getCapacity() / 2 + 1))

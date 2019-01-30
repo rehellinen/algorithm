@@ -17,11 +17,12 @@ export class ArrayQueue {
   }
 
   dequeue () {
-    if (this._data.length === 0) return 'empty'
+    if (this.isEmpty()) return 'empty'
     return this._data.splice(0, 1)[0]
   }
 
   getFront () {
+    if (this.isEmpty()) return 'empty'
     return this._data[0]
   }
 
