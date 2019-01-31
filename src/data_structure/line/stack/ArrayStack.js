@@ -2,7 +2,7 @@
  * 栈(stack)
  * 后进先出（LIFO）
  */
-export class Stack {
+export class ArrayStack {
   _data = []
   _top = 0
 

@@ -1,4 +1,4 @@
-import {Stack} from "../../data_structure/line/stack/Stack"
+import {ArrayStack} from "../../data_structure/line/stack/ArrayStack"
 
 // 题目介绍：
 // 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
@@ -8,7 +8,7 @@ import {Stack} from "../../data_structure/line/stack/Stack"
 // 注意空字符串可被认为是有效字符串。
 
 export const isValid = (str) => {
-  const stack = new Stack()
+  const stack = new ArrayStack()
   for (let i = 0; i < str.length; i++) {
     let char = str[i]
     if (char === '(' || char === '[' || char === '{') {
