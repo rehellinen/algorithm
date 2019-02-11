@@ -10,6 +10,6 @@ const path = {
   leetcode: './algorithm/leetcode'
 }
 
-const run = path.dataStructure
+const run = path.leetcode
 
 require(run)
