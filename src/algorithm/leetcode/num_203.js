@@ -1,3 +1,5 @@
+import {LinkedList} from "../../data_structure/line/linked_list/LinkedList"
+
 class ListNode {
   constructor(val, next) {
     this.val = val
@@ -35,3 +37,15 @@ const removeElementsV2 = (head, val) => {
   }
   return dummyHead.next
 }
+
+const removeElementsV3 = (head, val) => {
+  if (head === null) return null
+  head.next = removeElementsV3(head.next, val);
+  return head.val === val ? head.next : head
+}
+
+const list = new LinkedList([1, 3, 3, 6, 6, 7, 10])
+
+const head = removeElementsV3(list.getFirst(), 3)
+console.log(head)
+list.toString()
