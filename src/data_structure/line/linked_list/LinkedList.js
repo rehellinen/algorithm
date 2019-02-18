@@ -1,6 +1,6 @@
 class Node {
-  constructor (e, next = null) {
-    this.e = e
+  constructor (val, next = null) {
+    this.val = val
     this.next = next
   }
 }
@@ -9,8 +9,11 @@ export class LinkedList {
   _dummyHead
   _size = 0
 
-  constructor () {
+  constructor (arr = []) {
     this._dummyHead = new Node(null, null)
+    if (arr.length !== 0) {
+      arr.forEach(item => this.addLast(item))
+    }
   }
 
   getSize () {
@@ -21,23 +24,23 @@ export class LinkedList {
     return this._size === 0
   }
 
-  add (e, index) {
+  add (val, index) {
     this._isLegalIndex(index, this._size)
 
     let prev = this._dummyHead
     for (let i = 0; i < index; i++) {
       prev = prev.next
     }
-    prev.next = new Node(e, prev.next)
+    prev.next = new Node(val, prev.next)
     this._size++
   }
 
-  addFirst (e) {
-    this.add(e, 0)
+  addFirst (val) {
+    this.add(val, 0)
   }
 
-  addLast (e) {
-    this.add(e, this._size)
+  addLast (val) {
+    this.add(val, this._size)
   }
 
   get (index) {
@@ -46,8 +49,8 @@ export class LinkedList {
     for (let i = 0; i < index + 1; i++) {
       curr = curr.next
     }
-    return curr.e
-  }
+    return curr
+}
 
   getFirst () {
     return this.get(0)
@@ -57,19 +60,19 @@ export class LinkedList {
     return this.get(this._size - 1)
   }
 
-  set (index, e) {
+  set (index, val) {
     this._isLegalIndex(index, this._size - 1)
     let curr = this._dummyHead
     for (let i = 0; i < index + 1; i++) {
       curr = curr.next
     }
-    curr.e = e
+    curr.val = val
   }
 
-  contains (e) {
+  contains (val) {
     let curr = this._dummyHead.next
     while (curr !== null) {
-      if (curr.e === e) return true
+      if (curr.val === val) return true
       curr = curr.next
     }
     return false
@@ -85,7 +88,7 @@ export class LinkedList {
     prev.next = retNode.next
     retNode.next = null
     this._size--
-    return retNode.e
+    return retNode
   }
 
   deleteFirst () {
@@ -104,7 +107,7 @@ export class LinkedList {
     let str = `Linked List: size(${this._size})\n`
     let curr = this._dummyHead.next
     while (curr !== null) {
-      str += `${curr.e} -> `
+      str += `${curr.val} -> `
       curr = curr.next
     }
     console.log(str += 'null')
