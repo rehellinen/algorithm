@@ -4,6 +4,12 @@ import {ArrayQueue} from "./line/queue/ArrayQueue"
 import {CircularQueue} from "./line/queue/CircularQueue"
 import {performanceTesting} from "../utils/utils"
 import {LinkedList} from "./line/linked_list/LinkedList"
+import {BinarySearchTree} from "./tree/bst/BinarySearchTree"
+
+
+const bst = new BinarySearchTree([5, 3, 6, 2, 4, 8])
+bst.inTraverse()
+
 
 // 关于栈
 const testStack = () => {
@@ -31,7 +37,7 @@ const testList = () => {
     }
   })
 }
-testList()
+// testList()
 
 // 测试循环队列与普通队列的性能
 const testQueue = (times = 100) => {
