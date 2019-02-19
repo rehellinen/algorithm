@@ -8,7 +8,7 @@ import {BinarySearchTree} from "./tree/bst/BinarySearchTree"
 
 
 const bst = new BinarySearchTree([5, 3, 6, 2, 4, 8])
-bst.inTraverse()
+bst.levelOrder()
 
 
 // 关于栈

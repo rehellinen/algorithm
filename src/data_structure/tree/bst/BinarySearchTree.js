@@ -1,3 +1,5 @@
+import {CircularQueue} from "../../line/queue/CircularQueue"
+
 class Node {
   constructor (val = null, left = null, right = null) {
     this.val = val
@@ -40,7 +42,7 @@ export class BinarySearchTree {
     else return this.contains(val, node.right)
   }
 
-  // 前序遍历
+  // 前序遍历(深度优先)
   preTraverse (node = this.root) {
     if (node === null) return
     console.log(node.val)
@@ -62,6 +64,19 @@ export class BinarySearchTree {
     this.postTraverse(node.left)
     this.postTraverse(node.right)
     console.log(node.val)
+  }
+
+  // 层序遍历(广度优先)
+  levelOrder () {
+    const queue = new CircularQueue()
+    queue.enqueue(this.root)
+
+    while (!queue.isEmpty()) {
+      const cur = queue.dequeue()
+      console.log(cur.val)
+      if (cur.left !== null) queue.enqueue(cur.left)
+      if (cur.right !== null) queue.enqueue(cur.right)
+    }
   }
 
   getSize () {
