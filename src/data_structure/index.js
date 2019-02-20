@@ -7,6 +7,9 @@ import {LinkedList} from "./line/linked_list/LinkedList"
 import {BinarySearchTree} from "./tree/BinarySearchTree"
 import {BSTSet} from "./set/BSTSet"
 import {LinkedListSet} from "./set/LinkedListSet"
+import {LinkedListMap} from "./map/LinkedListMap"
+
+
 
 // 关于栈
 const testStack = () => {

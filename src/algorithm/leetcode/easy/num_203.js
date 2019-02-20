@@ -1,4 +1,4 @@
-import {LinkedList} from "../../data_structure/line/linked_list/LinkedList"
+import {LinkedList} from "../../../data_structure/line/linked_list/LinkedList"
 
 class ListNode {
   constructor(val, next) {
