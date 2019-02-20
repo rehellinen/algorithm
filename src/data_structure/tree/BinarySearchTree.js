@@ -18,14 +18,18 @@ export class BinarySearchTree {
     }
   }
 
-  add (val, node = this.root) {
+  add (val) {
+    this.root = this._add(val)
+  }
+
+  _add (val, node = this.root) {
     if (node === null) {
       this.size++
       return new Node(val)
     }
 
-    if (node.val > val) node.left = this.add(val, node.left)
-    else if (node.val < val) node.right = this.add(val, node.right)
+    if (node.val > val) node.left = this._add(val, node.left)
+    else if (node.val < val) node.right = this._add(val, node.right)
 
     return node
   }
