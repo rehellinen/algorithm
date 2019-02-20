@@ -7,7 +7,8 @@ import {LinkedList} from "./line/linked_list/LinkedList"
 import {BinarySearchTree} from "./tree/bst/BinarySearchTree"
 
 
-const bst = new BinarySearchTree([5, 3, 6, 2, 4, 8])
+const bst = new BinarySearchTree([51, 31, 61, 21, 41, 81, 33, 44])
+bst.remove(31)
 bst.levelOrder()
 
 

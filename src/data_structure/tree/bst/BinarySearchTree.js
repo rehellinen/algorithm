@@ -31,7 +31,73 @@ export class BinarySearchTree {
   }
 
   remove (val) {
+    this.root = this._remove(this.root, val)
+  }
 
+  _remove (node, val) {
+    if (node === null) return null
+
+    if (node.val > val) {
+      node.left = this._remove(node.left, val)
+      return node
+    } else if (node.val < val) {
+      node.right = this._remove(node.right, val)
+      return node
+    } else {
+      // 左子树为空
+      if (node.left === null) {
+        return this.removeMin(node)
+      // 右子树为空
+      } else if (node.right === null) {
+        return this.removeMax(node)
+      // 左右子树均不为空
+      } else {
+        const successor = this.getMin(node.right)
+        successor.right = this.removeMin(node.right)
+        successor.left = node.left
+
+        node.left = node.right = null
+        return successor
+      }
+    }
+  }
+
+  // 获取树的最小节点
+  getMin (node) {
+    if (node.left === null) return node
+    return this.getMin(node.left)
+  }
+
+  // 获取树的最大节点
+  getMax (node) {
+    if (node.right === null) return node
+    return this.getMin(node.right)
+  }
+
+  // 删除最小值
+  removeMin (node = this.root) {
+    if (node.left === null) {
+      const rightNode = node.right
+      node.right = null
+      this.size--
+      return rightNode
+    }
+
+    node.left = this.removeMin(node.left)
+    return node
+  }
+
+  // 删除最大值
+  removeMax (node = this.root) {
+    if (node.right === null) {
+      const leftNode = node.left
+      node.left = null
+      this.size--
+      return leftNode
+    }
+
+    node.right = this.removeMax(node.right)
+    return node
   }
 
   contains (val, node = this.root) {
