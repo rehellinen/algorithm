@@ -99,6 +99,22 @@ export class LinkedList {
     return this.delete(this._size - 1)
   }
 
+  deleteVal (val) {
+    if (!val) return
+    let prev = this._dummyHead
+
+    while (prev.next !== null) {
+      if (prev.next.val === val) break
+      prev = prev.next
+    }
+
+    if (prev.next === null) return
+    const delNode = prev.next
+    prev.next = delNode.next
+    delNode.next = null
+    this._size--
+  }
+
   _isLegalIndex (index, max = this._size) {
     if (index < 0 || index > max) throw new Error('index err')
   }
