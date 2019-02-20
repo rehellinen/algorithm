@@ -4,12 +4,9 @@ import {ArrayQueue} from "./line/queue/ArrayQueue"
 import {CircularQueue} from "./line/queue/CircularQueue"
 import {performanceTesting} from "../utils/utils"
 import {LinkedList} from "./line/linked_list/LinkedList"
-import {BinarySearchTree} from "./tree/bst/BinarySearchTree"
+import {BinarySearchTree} from "./tree/BinarySearchTree"
+import {BSTSet} from "./set/BSTSet"
 
-
-const bst = new BinarySearchTree([51, 31, 61, 21, 41, 81, 33, 44])
-bst.remove(31)
-bst.levelOrder()
 
 
 // 关于栈
