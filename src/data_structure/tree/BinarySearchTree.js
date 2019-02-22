@@ -1,4 +1,4 @@
-import {CircularQueue} from "../line/queue/CircularQueue"
+import {CircularQueue} from "../queue/CircularQueue"
 
 class Node {
   constructor (val = null, left = null, right = null) {

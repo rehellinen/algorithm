@@ -1,4 +1,4 @@
-import {ArrayStack} from "../../../data_structure/line/stack/ArrayStack"
+import {ArrayStack} from "../../../data_structure/stack/ArrayStack"
 
 // 题目介绍：
 // 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
