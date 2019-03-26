@@ -16,14 +16,6 @@ export class LinkedList {
     }
   }
 
-  getSize () {
-    return this._size
-  }
-
-  isEmpty () {
-    return this._size === 0
-  }
-
   add (val, index) {
     this._isLegalIndex(index, this._size)
 
@@ -119,6 +111,12 @@ export class LinkedList {
     if (index < 0 || index > max) throw new Error('index err')
   }
 
+  getSize () {
+    return this._size
+  }
+  isEmpty () {
+    return this._size === 0
+  }
   toString () {
     let str = `Linked List: size(${this._size})\n`
     let curr = this._dummyHead.next
