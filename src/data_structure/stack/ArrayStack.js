@@ -31,12 +31,10 @@ export class ArrayStack {
   getSize () {
     return this._top
   }
-
   // 判断栈是否为空
   isEmpty () {
     return this._top === 0
   }
-
   toString () {
     let str = `Stack: size(${this.getSize()})\n[`
     this._data.forEach((item, index) => {

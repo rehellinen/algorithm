@@ -4,14 +4,6 @@
 export class ArrayQueue {
   _data = []
 
-  getSize () {
-    return this._data.length
-  }
-
-  isEmpty () {
-    return this._data.length === 0
-  }
-
   enqueue (e) {
     this._data.push(e)
   }
@@ -25,7 +17,13 @@ export class ArrayQueue {
     if (this.isEmpty()) return 'empty'
     return this._data[0]
   }
-
+  
+  getSize () {
+    return this._data.length
+  }
+  isEmpty () {
+    return this._data.length === 0
+  }
   toString () {
     let str = `Queue: size(${this.getSize()})\nfront <- [`
     this._data.forEach((item, index) => {

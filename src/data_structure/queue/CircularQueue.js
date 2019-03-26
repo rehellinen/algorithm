@@ -9,18 +9,6 @@ export class CircularQueue {
     this._data = new Array(capacity + 1)
   }
 
-  getCapacity () {
-    return this._data.length - 1
-  }
-
-  getSize () {
-    return this.size
-  }
-
-  isEmpty () {
-    return this.front === this.tail
-  }
-
   enqueue (e) {
     if ((this.tail + 1) % this._data.length === this.front) {
       this.resize(this.getCapacity() * 2 + 1)
@@ -62,6 +50,15 @@ export class CircularQueue {
     this.tail = this.size
   }
 
+  getCapacity () {
+    return this._data.length - 1
+  }
+  getSize () {
+    return this.size
+  }
+  isEmpty () {
+    return this.front === this.tail
+  }
   toString () {
     let str = `Circular Queue: size(${this.getSize()}) capacity(${this.getCapacity()})\nfront <- [`
 
