@@ -6,3 +6,7 @@
 #### CircularQueue
 1. 入队  O(1)
 2. 出队  O(1)
+
+#### ListQueue
+1. 入队  O(1)
+2. 出队  O(1)

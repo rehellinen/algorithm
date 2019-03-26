@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch ./src --exec node index"
+    "data": "nodemon --watch ./src --exec node index --data",
+    "algo": "nodemon --watch ./src --exec node index --algo",
+    "leet": "nodemon --watch ./src --exec node index --leet"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,7 @@
   "homepage": "https://github.com/rehellinen/webpack_cli#readme",
   "devDependencies": {
     "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",

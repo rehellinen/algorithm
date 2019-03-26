@@ -4,12 +4,11 @@
  *  Create On 2018/11/28 10:24
  */
 const path = {
-  sort: './algorithm/sort',
-  test: './test',
-  dataStructure: './data_structure/index',
-  leetcode: './algorithm/leetcode'
+  algo: './algorithm/sort',
+  data: './data_structure/index',
+  leet: './algorithm/leetcode'
 }
 
-const run = path.leetcode
-
+const type = process.argv.pop().replace(/-/g, '')
+const run = path[type]
 require(run)

@@ -8,12 +8,7 @@ import {BinarySearchTree} from "./tree/BinarySearchTree"
 import {BSTSet} from "./set/BSTSet"
 import {LinkedListSet} from "./set/LinkedListSet"
 import {LinkedListMap} from "./map/LinkedListMap"
-
-const t = new BinarySearchTree()
-t.add(4)
-t.add(2)
-t.add(5)
-t.inTraverse()
+import {ListQueue} from "./queue/ListQueue"
 
 // 关于栈
 const testStack = () => {
