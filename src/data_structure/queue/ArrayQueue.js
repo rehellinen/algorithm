@@ -18,7 +18,7 @@ export class ArrayQueue {
 
   dequeue () {
     if (this.isEmpty()) return 'empty'
-    return this._data.splice(0, 1)[0]
+    return this._data.shift()
   }
 
   getFront () {

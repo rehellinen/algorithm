@@ -1,20 +1,8 @@
-/**
- * 栈(stack)
- * 后进先出（LIFO）
- */
+// 栈(stack)
+// 后进先出（LIFO）
 export class ArrayStack {
   _data = []
   _top = 0
-
-  // 查看栈中有多少元素
-  getSize () {
-    return this._top
-  }
-
-  // 判断栈是否为空
-  isEmpty () {
-    return this._top === 0
-  }
 
   // 向栈内放入一个新元素
   push (e) {
@@ -37,6 +25,16 @@ export class ArrayStack {
   clear () {
     this._data = []
     this._top = 0
+  }
+
+  // 查看栈中有多少元素
+  getSize () {
+    return this._top
+  }
+
+  // 判断栈是否为空
+  isEmpty () {
+    return this._top === 0
   }
 
   toString () {
