@@ -14,7 +14,10 @@ class Node {
 }
 
 // TODO: 用递归完成添加、查询操作，完成删除操作
-// TODO: 压缩字典树、三分搜素树
+// TODO: 压缩字典树、三分搜素树Trie、后缀树
+// TODO: LeetCode：211、677
+// TODO: 子串查询 - KMP Boyer-Moore Rabin-Karp
+// TODO: 文件压缩、模式匹配、编译原理
 class Trie {
   root = new Node()
   size = 0
