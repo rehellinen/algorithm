@@ -1,6 +1,5 @@
 /**
- * 并查集
- * Quick Find
+ * 并查集(Quick Find)
  * union - O(n)
  * isUnited - O(1)
  */
@@ -9,6 +8,7 @@ class UnionFind {
 
   id = []
 
+  // 初始化元素数组，每个元素的类别都不同
   constructor (size) {
     for (let i = 0; i < size; i++) {
       this.id.push(i)
