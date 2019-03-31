@@ -1,4 +1,4 @@
-import {swapArr} from "../../utils/utils"
+import {swapArr} from "../../../utils/utils"
 
 export class MaxHeap {
   data = []

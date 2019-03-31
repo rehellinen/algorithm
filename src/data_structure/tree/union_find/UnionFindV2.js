@@ -1,7 +1,7 @@
 /**
  * 并查集(Quick Find)
- * union - O(h)
- * isUnited - O(h)
+ * union - O(h) - O(log*n)
+ * isUnited - O(h) - O(log*n)
  * h为树的高度
  */
 

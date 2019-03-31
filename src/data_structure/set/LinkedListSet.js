@@ -1,4 +1,4 @@
-import {LinkedList} from "../linked_list/LinkedList"
+import {LinkedList} from "../line/linked_list/LinkedList"
 
 export class LinkedListSet {
   constructor (arr) {
