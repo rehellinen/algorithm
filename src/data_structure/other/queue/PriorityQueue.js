@@ -1,4 +1,4 @@
-import {MaxHeap} from "../tree/heap/MaxHeap"
+import {MaxHeap} from "../../tree/heap/MaxHeap"
 
 export class PriorityQueue {
   maxHeap = new MaxHeap()

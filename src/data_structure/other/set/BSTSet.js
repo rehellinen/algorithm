@@ -1,4 +1,4 @@
-import {BinarySearchTree} from "../tree/binary_search/BinarySearchTree"
+import {BinarySearchTree} from "../../tree/binary_search/BinarySearchTree"
 
 export class BSTSet {
   constructor (arr = []) {

@@ -1,14 +1,14 @@
 import {ArrayStack} from "./line/stack/ArrayStack"
 import {ListStack} from "./line/stack/ListStack"
-import {ArrayQueue} from "./queue/ArrayQueue"
-import {CircularQueue} from "./queue/CircularQueue"
+import {ArrayQueue} from "./other/queue/ArrayQueue"
+import {CircularQueue} from "./other/queue/CircularQueue"
 import {performanceTesting} from "../utils/utils"
 import {LinkedList} from "./line/linked_list/LinkedList"
 import {BinarySearchTree} from "./tree/BinarySearchTree"
-import {BSTSet} from "./set/BSTSet"
-import {LinkedListSet} from "./set/LinkedListSet"
-import {LinkedListMap} from "./map/LinkedListMap"
-import {ListQueue} from "./queue/ListQueue"
+import {BSTSet} from "./other/set/BSTSet"
+import {LinkedListSet} from "./other/set/LinkedListSet"
+import {LinkedListMap} from "./other/map/LinkedListMap"
+import {ListQueue} from "./other/queue/ListQueue"
 
 // 关于栈
 const testStack = () => {
