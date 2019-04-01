@@ -27,7 +27,7 @@ class Node {
 }
 
 // TODO: 删除元素
-// TODO: 右倾红黑色
+// TODO: 右倾红黑树
 // TODO: Splay Tree - 伸展树
 export class RedBlackTree {
   root = null
