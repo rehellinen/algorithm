@@ -1,33 +1,39 @@
+/**
+ * 二叉堆 - 完全二叉树
+ * 最大堆 - 每个父节点大于其子节点
+ */
+
 import {swapArr} from "../../../utils/utils"
 
 export class MaxHeap {
   data = []
   constructor (arr) {
+    // Heapify
     for (let i = this._parent(arr.length - 1); i >= 0; i--) {
-      this.siftDown(i)
+      this._siftDown(i)
     }
   }
 
+  // 添加一个元素
   add (e) {
     this.data.push(e)
-    this.siftUp(this.getSize() - 1)
+    this._siftUp(this.getSize() - 1)
   }
-
-  extractMax () {
-    const max = this.getMax()
-    this.data[0] = this.data.pop()
-    this.siftDown(0)
-    return max
-  }
-
-  siftUp (i) {
+  _siftUp (i) {
     while (i > 0 && this.data[this._parent(i)] < this.data[i]) {
       swapArr(this.data, i, this._parent(i))
       i = this._parent(i)
     }
   }
 
-  siftDown (i) {
+  // 提取最大的元素
+  extractMax () {
+    const max = this.getMax()
+    this.data[0] = this.data.pop()
+    this._siftDown(0)
+    return max
+  }
+  _siftDown (i) {
     while (this._left(i) < this.getSize()) {
       let maxIndex = this._left(i)
       if (i + 1 < this.getSize() && this.data[i + 1] > this.data[i]) {
@@ -41,36 +47,43 @@ export class MaxHeap {
     }
   }
 
+  // 取出堆中的最大元素，并且替换成val
   replace (val) {
     const res = this.getMax()
     this.data[0] = val
-    this.siftDown(0)
+    this._siftDown(0)
     return res
   }
 
+  // 获取堆中元素数量
   getSize () {
     return this.data.length
   }
-
+  // 是否为空
   isEmpty () {
     return this.data.length === 0
   }
-
+  // 获取最大的元素
   getMax () {
     if (this.isEmpty()) throw new Error('the heap is empty')
     return this.data[0]
   }
 
+  // 获取节点i的父亲
   _parent (i) {
     if (i <= 0) throw new Error('index illegal')
     return Math.floor((i - 1) / 2)
   }
 
+  // 获取节点i的左孩子
   _left (i) {
+    if (i < 0) throw new Error('index illegal')
     return 2 * i + 1
   }
 
+  // 获取节点i的右孩子
   _right (i) {
+    if (i < 0) throw new Error('index illegal')
     return 2 * i + 2
   }
 }
