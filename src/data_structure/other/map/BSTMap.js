@@ -14,7 +14,6 @@ export class BSTMap {
   add (key, val) {
     this.root = this._add(key, val)
   }
-
   _add (key, val, node = this.root) {
     if (node === null) {
       this.size++

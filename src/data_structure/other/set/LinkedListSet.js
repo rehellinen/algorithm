@@ -21,7 +21,6 @@ export class LinkedListSet {
   getSize () {
     return this.list.getSize()
   }
-
   isEmpty () {
     return this.list.isEmpty()
   }

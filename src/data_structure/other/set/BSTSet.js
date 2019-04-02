@@ -20,7 +20,6 @@ export class BSTSet {
   getSize () {
     return this.bst.getSize()
   }
-
   isEmpty () {
     return this.bst.isEmpty()
   }

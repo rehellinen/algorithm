@@ -96,6 +96,9 @@ class HashTable {
     // TODO: 转为哈希
     return key.toHash() % this.M
   }
+  toHash () {
+
+  }
 
   getSize () {
     return this.size

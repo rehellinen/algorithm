@@ -5,6 +5,9 @@
 
 import {swapArr} from "../../../utils/utils"
 
+// TODO: 利用比较器优化比较逻辑
+// TODO: d叉堆、索引堆
+// TODO: 二项堆、斐波那契堆
 export class MaxHeap {
   data = []
   constructor (arr) {

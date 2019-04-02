@@ -27,16 +27,12 @@ export class LinkedListMap {
     }
 
     if (prev.next === null) return null
+
     const delNode = prev.next
     prev.next = delNode.next
     delNode.next = null
     this.size--
     return delNode.val
-  }
-
-  get (key) {
-    const node = this._getNode(key)
-    return node === null ? null : node.val
   }
 
   set (key, val) {
@@ -45,10 +41,16 @@ export class LinkedListMap {
     node.val = val
   }
 
+  get (key) {
+    const node = this._getNode(key)
+    return node === null ? null : node.val
+  }
+
   contains (key) {
     return this._getNode(key) !== null
   }
 
+  // 根据key获取节点
   _getNode (key) {
     let cur = this.dummyHead.next
     while (cur !== null) {
@@ -61,7 +63,6 @@ export class LinkedListMap {
   getSize () {
     return this.size
   }
-
   isEmpty () {
     return this.size === 0
   }

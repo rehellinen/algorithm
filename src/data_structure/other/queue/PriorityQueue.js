@@ -3,10 +3,6 @@ import {MaxHeap} from "../../tree/heap/MaxHeap"
 export class PriorityQueue {
   maxHeap = new MaxHeap()
 
-  constructor () {
-
-  }
-
   enqueue (val) {
     this.maxHeap.add(val)
   }
@@ -22,7 +18,6 @@ export class PriorityQueue {
   getSize () {
     return this.maxHeap.getSize()
   }
-
   isEmpty () {
     return this.maxHeap.isEmpty()
   }
