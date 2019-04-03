@@ -9,6 +9,9 @@ const path = {
   leet: './algorithm/leetcode'
 }
 
+global.$config = {
+}
+
 const type = process.argv.pop().replace(/-/g, '')
 const run = path[type]
 require(run)
