@@ -70,4 +70,15 @@ const copyArr = (arr) => {
   return JSON.parse(JSON.stringify(arr))
 }
 
+export const timeTesting = (func, times, ...params) => {
+  const startTime = new Date().getTime()
+  for (let i = 0; i < times; i++) {
+    func(...params)
+  }
+  const endTime = new Date().getTime()
+
+  console.log(`${func.name} - ${endTime - startTime}ms`)
+  return endTime - startTime
+}
+
 export {generateRandomArr, consoleArr, performanceTesting, isCorrectOrder, swapArr, generateNearlyOrderedArr, copyArr}
