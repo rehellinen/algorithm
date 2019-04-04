@@ -7,16 +7,6 @@ export class ListStack {
     this._data = new LinkedList()
   }
 
-  // 查看栈中有多少元素
-  getSize () {
-    return this._data.getSize()
-  }
-
-  // 判断栈是否为空
-  isEmpty () {
-    return this._data.isEmpty()
-  }
-
   // 向栈内放入一个新元素
   push (e) {
     this._data.addFirst(e)
@@ -37,6 +27,14 @@ export class ListStack {
     this._data = new LinkedList()
   }
 
+  // 查看栈中有多少元素
+  getSize () {
+    return this._data.getSize()
+  }
+  // 判断栈是否为空
+  isEmpty () {
+    return this._data.isEmpty()
+  }
   toString () {
     return this._data.toString()
   }
