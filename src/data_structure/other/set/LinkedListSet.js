@@ -1,7 +1,7 @@
 import {LinkedList} from "../../line/linked_list/LinkedList"
 
 export class LinkedListSet {
-  constructor (arr) {
+  constructor (arr = []) {
     this.list = new LinkedList()
     arr.forEach(item => this.add(item))
   }
