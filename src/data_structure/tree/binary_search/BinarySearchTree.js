@@ -20,8 +20,8 @@ export class BinarySearchTree {
 
   add (val) {
     this.root = this._add(val)
+    return this
   }
-
   _add (val, node = this.root) {
     if (node === null) {
       this.size++
@@ -37,7 +37,6 @@ export class BinarySearchTree {
   remove (val) {
     this.root = this._remove(this.root, val)
   }
-
   _remove (node, val) {
     if (node === null) return null
 
@@ -75,7 +74,7 @@ export class BinarySearchTree {
   // 获取树的最大节点
   getMax (node) {
     if (node.right === null) return node
-    return this.getMin(node.right)
+    return this.getMax(node.right)
   }
 
   // 删除最小值
@@ -120,7 +119,7 @@ export class BinarySearchTree {
     this.preTraverse(node.right)
   }
 
-  // 中序遍历
+  // 中序遍历(从小到大排列)
   inTraverse (node = this.root) {
     if (node === null) return
     this.inTraverse(node.left)
@@ -152,7 +151,6 @@ export class BinarySearchTree {
   getSize () {
     return this.size
   }
-
   isEmpty () {
     return this.size === 0
   }

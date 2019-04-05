@@ -1,8 +1,14 @@
-// 测试数组
+// 数组
 // import './line/array'
-// 测试链表
+
+// 链表
 // import './line/linked_list'
-// 测试栈
+
+// 栈
 // import './line/stack'
-// 测试队列
-import './other/queue'
+
+// 队列
+// import './other/queue'
+
+// 二分搜索树
+import './tree/binary_search'
