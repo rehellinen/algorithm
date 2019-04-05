@@ -10,7 +10,8 @@ import {swapArr} from "../../../utils/utils"
 // TODO: 二项堆、斐波那契堆
 export class MaxHeap {
   data = []
-  constructor (arr) {
+  constructor (arr = []) {
+    if (arr.length === 0) return
     // Heapify
     for (let i = this._parent(arr.length - 1); i >= 0; i--) {
       this._siftDown(i)
