@@ -52,12 +52,12 @@ export class ListQueue {
     return this.size === 0
   }
   toString () {
-    let str = `List Queue: size(${this.size})\n`
+    let str = `List Queue: size(${this.size})\nfront <- [`
     let curr = this.head
     while (curr !== null) {
-      str += `${curr.val} -> `
+      str += `${curr.val}${curr.next !== null ? ', ' : ''}`
       curr = curr.next
     }
-    console.log(str += 'null')
+    console.log(str += ']')
   }
 }

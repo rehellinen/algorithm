@@ -1,12 +1,26 @@
 ### 队列复杂度分析：
 #### ArrayQueue
-1. 入队  O(1)
-2. 出队  O(n)
+```
+  enqueue  O(1)
+  dequeue  O(n)
+```
 
 #### CircularQueue
-1. 入队  O(1)
-2. 出队  O(1)
+```
+  enqueue  O(1)
+  dequeue  O(1)
+```
 
 #### ListQueue
-1. 入队  O(1)
-2. 出队  O(1)
+```
+  enqueue  O(1)
+  dequeue  O(1)
+```
+
+#### PriorityQueue
+```
+  enqueue  O(logn)
+  dequeue  O(logn)
+```
+
+
