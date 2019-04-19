@@ -4,9 +4,9 @@
  *  Create On 2018/11/28 10:24
  */
 const path = {
-  algo: './algorithm/sort',
-  data: './data_structure/index',
-  leet: './algorithm/leetcode'
+  algo: './algorithm',
+  data: './data_structure',
+  leet: './leetcode'
 }
 
 global.$config = {
