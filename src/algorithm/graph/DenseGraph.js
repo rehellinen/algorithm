@@ -54,7 +54,8 @@ export class DenseGraph {
   }
   // 判断节点范围是否合法
   _isLegalRange (i) {
-    if (i < 0 || i >= this.vertex) {
+    i = parseInt(i)
+    if (i < 0 || i >= parseInt(this.vertex)) {
       throw new Error('the range of vertex is error')
     }
   }
@@ -72,9 +73,9 @@ export class DenseGraph {
   // 遍历规定节点的所有相连节点
   [Symbol.iterator] () {
     let index = 0
+    const iterator = this.graph[this.iteratorNode]
     return {
       next: () => {
-        const iterator = this.graph[this.iteratorNode]
         for (let i = index; i <= iterator.length; i++) {
           const retObj = {done: false}
           if (i >= iterator.length) retObj.done = true
