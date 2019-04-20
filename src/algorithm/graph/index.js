@@ -63,13 +63,23 @@ const testDFS = () => {
 }
 
 const testRead = async () => {
-  const sparse = await new ReadGraph(SparseGraph, 'data1.txt').getGraph()
-  const dense = await new ReadGraph(DenseGraph, 'data1.txt').getGraph()
+  const sparse1 = await new ReadGraph(SparseGraph, 'data1.txt').getGraph()
+  const sparse2 = await new ReadGraph(SparseGraph, 'data2.txt').getGraph()
+  const dense1 = await new ReadGraph(DenseGraph, 'data1.txt').getGraph()
+  const dense2 = await new ReadGraph(DenseGraph, 'data2.txt').getGraph()
 
-  sparse.toString()
-  const com1 = new Component(sparse)
+  // const com11 = new Component(sparse1)
+  // console.log(com11.getCount())
+  //
+  // const com12 = new Component(sparse2)
+  // console.log(com12.getCount())
+
+  const com21 = new Component(dense1)
+  console.log(com21.getCount())
+
+  const com22 = new Component(dense2)
+  console.log(com22.getCount())
   // const com2 = new Component(sparse)
-  console.log(com1.getCount())
   // console.log(com2.getCount())
 }
 // testSparse()
