@@ -13,6 +13,8 @@ export class SparseGraph {
   graph = []
   // 是否为有向图
   directed = false
+  // 遍历的节点
+  iteratorNode = 0
 
   constructor (vertex = 0, directed = false) {
     this.vertex = vertex
@@ -53,7 +55,29 @@ export class SparseGraph {
       this.graph[i].forEach(item => {
         str += `${item}, `
       })
-      console.log(str)
+      console.log(`${str}${i === this.graph.length-1 ? '\n' : ''}`)
     }
+  }
+  // Iterator接口
+  // 遍历规定节点的所有相连节点
+  [Symbol.iterator] () {
+    let index = 0
+    return {
+      next: () => {
+        const iterator = this.graph[this.iteratorNode]
+
+        const retObj = {done: false}
+        if (index === iterator.length) retObj.done = true
+
+        retObj.value = iterator[index]
+        index++
+
+        return retObj
+      }
+    }
+  }
+  // 设置需要遍历的节点
+  setIterator (v) {
+    this.iteratorNode = v
   }
 }

@@ -8,7 +8,7 @@ import {DenseGraph} from "./DenseGraph"
 import {SparseGraph} from "./SparseGraph"
 
 const vertex = 10
-const edge = 50
+const edge = 40
 
 // 测试稀疏图
 const testSparse = () => {
@@ -20,6 +20,10 @@ const testSparse = () => {
     )
   }
   sparse.toString()
+  sparse.setIterator(9)
+  for (let item of sparse) {
+    console.log(item)
+  }
 }
 
 const testDense = () => {
@@ -31,7 +35,11 @@ const testDense = () => {
     )
   }
   dense.toString()
+  dense.setIterator(9)
+  for (let item of dense) {
+    console.log(item)
+  }
 }
-
-testDense()
+testSparse()
+// testDense()
 
