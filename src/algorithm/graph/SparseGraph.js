@@ -67,7 +67,7 @@ export class SparseGraph {
         const iterator = this.graph[this.iteratorNode]
 
         const retObj = {done: false}
-        if (index === iterator.length) retObj.done = true
+        if (index >= iterator.length) retObj.done = true
 
         retObj.value = iterator[index]
         index++
@@ -78,6 +78,7 @@ export class SparseGraph {
   }
   // 设置需要遍历的节点
   setIterator (v) {
+    if (v >= this.graph.length) throw new Error('illegal vertex')
     this.iteratorNode = v
   }
 }

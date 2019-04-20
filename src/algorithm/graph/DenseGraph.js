@@ -77,7 +77,7 @@ export class DenseGraph {
         const iterator = this.graph[this.iteratorNode]
         for (let i = index; i <= iterator.length; i++) {
           const retObj = {done: false}
-          if (i === iterator.length) retObj.done = true
+          if (i >= iterator.length) retObj.done = true
 
           if (iterator[i]) {
             retObj.value = i
