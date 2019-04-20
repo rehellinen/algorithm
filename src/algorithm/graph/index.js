@@ -8,6 +8,7 @@ import {DenseGraph} from "./DenseGraph"
 import {SparseGraph} from "./SparseGraph"
 import {Component} from "./class/Component"
 import {ReadGraph} from "./class/ReadGraph"
+import {Path} from "./class/Path"
 
 const vertex = 5
 const edge = 10
@@ -82,8 +83,16 @@ const testRead = async () => {
   // const com2 = new Component(sparse)
   // console.log(com2.getCount())
 }
+
+const testPath = async () => {
+  const sparse = await new ReadGraph(SparseGraph, 'data1.txt').getGraph()
+  const path = new Path(sparse, 0)
+  path.showPath(1)
+}
+
+testPath()
 // testSparse()
 // testDense()
 // testDFS()
-testRead()
+// testRead()
 

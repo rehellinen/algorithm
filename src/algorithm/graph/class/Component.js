@@ -5,9 +5,13 @@
  */
 
 export class Component {
+  // 图的实例
   graph = null
+  // 判断节点是否被遍历
   visited = []
+  // 节点所属的连通分量id
   id= []
+  // 连通分量的数量
   cCount = 0
 
   constructor (graph) {
@@ -44,6 +48,7 @@ export class Component {
   }
   // 判断节点范围是否合法
   _isLegalRange (i) {
+    i = parseInt(i)
     if (i < 0 || i >= this.graph.getVertex()) {
       throw new Error('the range of vertex is error')
     }
