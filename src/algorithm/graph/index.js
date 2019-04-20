@@ -6,12 +6,13 @@
 
 import {DenseGraph} from "./DenseGraph"
 import {SparseGraph} from "./SparseGraph"
-import {Component} from "./Component"
+import {Component} from "./class/Component"
+import {ReadGraph} from "./class/ReadGraph"
 
 const vertex = 5
 const edge = 10
 
-// 测试稀疏图
+
 const testSparse = () => {
   const sparse = new SparseGraph(vertex, false)
   for (let i = 0; i < edge; i++) {
@@ -61,7 +62,18 @@ const testDFS = () => {
   // com1.dfs(0)
 }
 
+const testRead = async () => {
+  const sparse = await new ReadGraph(SparseGraph, 'data1.txt').getGraph()
+  const dense = await new ReadGraph(DenseGraph, 'data1.txt').getGraph()
+
+  sparse.toString()
+  const com1 = new Component(sparse)
+  // const com2 = new Component(sparse)
+  console.log(com1.getCount())
+  // console.log(com2.getCount())
+}
 // testSparse()
 // testDense()
-testDFS()
+// testDFS()
+testRead()
 
