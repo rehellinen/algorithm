@@ -1,20 +1,17 @@
 /**
- *  ShortestPath.js
+ *  Path.js
  *  Create By rehellinen
- *  Create On 2019/4/20 17:23
+ *  Create On 2019/4/20 14:07
  */
-import {CircularQueue} from "../../../data_structure/other/queue/CircularQueue"
-import {ArrayStack} from "../../../data_structure/line/stack/ArrayStack"
+import {ArrayStack} from "../../../../data_structure/line/stack/ArrayStack"
 
-export class ShortestPath {
+export class Path {
   // 图的实例
   graph = null
   // 判断节点是否被遍历
   visited = []
   // 遍历过程中该节点的上个节点
   from = []
-  // 到源点的距离
-  distance = []
   // 源点
   source = 0
 
@@ -23,29 +20,20 @@ export class ShortestPath {
     this._isLegalRange(source)
     this.source = source
 
-    const queue = new CircularQueue()
-    queue.enqueue(source)
-    this.visited[source] = true
-    this.distance[source] = 0
-    while (!queue.isEmpty()) {
-      const v = queue.dequeue()
-
-      this.graph.setIterator(v)
-      for (let item of this.graph) {
-        if (!this.visited[item]) {
-          queue.enqueue(item)
-          this.visited[item] = true
-          this.from[item] = v
-          this.distance[item] = this.distance[v] + 1
-        }
-      }
-    }
+    this.dfs(source)
   }
 
-  // 获取source到w的最短的length
-  getLength (w) {
-    this._isLegalRange(w)
-    return this.distance[w]
+  // 深度优先遍历
+  dfs (v) {
+    this.visited[v] = true
+    // 遍历图的v节点的所有相连节点
+    this.graph.setIterator(v)
+    for (let vertex of this.graph) {
+      if (!this.visited[vertex]) {
+        this.from[vertex] = v
+        this.dfs(vertex)
+      }
+    }
   }
 
   // 判断source和w之间是否有路径
@@ -73,7 +61,7 @@ export class ShortestPath {
   // 打印出source和w之间的路径
   showPath (w) {
     const res = this.path(w)
-    let str = `bfs: `
+    let str = `dfs: `
     res.forEach((item, index) => {
       str += item
       if (index < res.length - 1) str += ' -> '

@@ -3,7 +3,7 @@
  *  Create By rehellinen
  *  Create On 2019/4/19 22:41
  */
-import {resolve} from 'path'
+import {resolve} from 'src/algorithm/graph/unweighted/class/Path'
 import {promisify} from 'util'
 import fs from 'fs'
 
@@ -11,7 +11,7 @@ const readPromise = promisify(fs.readFile)
 
 export class ReadGraph {
   constructor (GraphClass, filename) {
-    this.path = resolve(__dirname, '../test_data', filename)
+    this.path = resolve(__dirname, '../../test_data', filename)
     this.GraphClass = GraphClass
 
   }
