@@ -9,6 +9,7 @@ import {SparseGraph} from "./SparseGraph"
 import {Component} from "./class/Component"
 import {ReadGraph} from "./class/ReadGraph"
 import {Path} from "./class/Path"
+import {ShortestPath} from "./class/ShortestPath"
 
 const vertex = 5
 const edge = 10
@@ -86,8 +87,10 @@ const testRead = async () => {
 
 const testPath = async () => {
   const sparse = await new ReadGraph(SparseGraph, 'data1.txt').getGraph()
-  const path = new Path(sparse, 0)
-  path.showPath(1)
+  const path = new Path(sparse, 5)
+  const shortest = new ShortestPath(sparse, 5)
+  path.showPath(4)
+  shortest.showPath(4)
 }
 
 testPath()
