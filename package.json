@@ -6,7 +6,8 @@
   "scripts": {
     "data": "nodemon --watch ./src --exec node index --data",
     "algo": "nodemon --watch ./src --exec node index --algo",
-    "leet": "nodemon --watch ./src --exec node index --leet"
+    "leet": "nodemon --watch ./src --exec node index --leet",
+    "test": "nodemon --watch ./src --exec node index --test"
   },
   "repository": {
     "type": "git",

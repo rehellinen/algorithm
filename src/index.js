@@ -6,7 +6,8 @@
 const path = {
   algo: './algorithm',
   data: './data_structure',
-  leet: './leetcode'
+  leet: './leetcode',
+  test: './test'
 }
 
 global.$config = {
