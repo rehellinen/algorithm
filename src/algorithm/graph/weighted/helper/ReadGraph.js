@@ -30,7 +30,7 @@ export class ReadGraph {
 
     const graph = new this.GraphClass(vertexCount)
     for (let i = 0; i < edgeCount; i++) {
-      graph.addEdge(res[i][0], res[i][1])
+      graph.addEdge(parseInt(res[i][0]), parseInt(res[i][1]), parseFloat(res[i][2]))
     }
 
     return graph

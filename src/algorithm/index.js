@@ -3,6 +3,7 @@
  *  Create By rehellinen
  *  Create On 2019/4/19 21:49
  */
-// 图
-import './graph/unweighted/index'
-
+// 无权图
+// import './graph/unweighted'
+// 有权图
+import './graph/weighted'
